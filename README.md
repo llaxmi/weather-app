@@ -13,7 +13,7 @@ A simple React Native weather app that allows users to check the current weather
 To run the project locally, follow these steps:
 
 1. Clone the repository to your local machine.
-- git clone [https://github.com/llaxmi/weather-app.git](https://github.com/llaxmi/weather-app.git)
+- `https://github.com/llaxmi/weather-app.git `
 2. Navigate to the project directory.
 - cd weather-app
 
