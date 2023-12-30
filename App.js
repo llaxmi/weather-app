@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+
 import SearchBar from "./components/SearchBar";
 import Weather from "./components/Weather";
 
-const API_KEY = "0691db48528fad95e3d7c7e47c6a028b";
+import { API_KEY } from "@env";
+
 const units = "metric";
 
 export default function App() {
@@ -12,10 +14,12 @@ export default function App() {
 
   async function fetchWeatherData(cityName) {
     setLoaded(false);
-    const API = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=${units}`;
+    const API = API_KEY;
 
     try {
-      const response = await fetch(API);
+      const response = await fetch(
+        `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=${units}`
+      );
       if (response.status == 200) {
         const data = await response.json();
         setWeatherData(data);
@@ -35,7 +39,7 @@ export default function App() {
   if (!loaded) {
     return (
       <View style={styles.container}>
-        <ActivityIndicator color="gray" size={36} />
+        <ActivityIndicator color="black" size={36} />
       </View>
     );
   } else if (weatherData === null) {

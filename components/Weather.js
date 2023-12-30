@@ -11,6 +11,7 @@ import {
 import {
   Cloud,
   Fog,
+  Morning,
   Night,
   Normal,
   Rain,
@@ -40,7 +41,7 @@ const Weather = ({ weatherData, fetchWeatherData }) => {
     if (weather === "Fog") return Fog;
     if (weather === "Clouds") return Cloud;
 
-    return Normal;
+    return Morning;
   }
 
   let textColor = backgroundImage === Snow ? "black" : "white";
